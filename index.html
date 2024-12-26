@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts about Vrindavan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e7f3fe;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        li:hover {
+            background: #d0e7ff;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts about Vrindavan</h1>
+        <ul id="facts-list"></ul>
+        <button id="new-fact-btn">Show Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Vrindavan is considered one of the most sacred places in Hinduism as it is believed to be the birthplace of Lord Krishna.",
+            "The town is known for its rich cultural heritage, with numerous temples dedicated to Lord Krishna and Radha.",
+            "Vrindavan is famous for the Rasa Lila, a traditional dance-drama depicting the exploits of Lord Krishna with the gopis.",
+            "The sacred Yamuna River flows through Vrindavan, and taking a dip in its waters is believed to cleanse one of sins.",
+            "Vrindavan is part of the Braj Mandal, which includes other towns associated with the life of Lord Krishna, such as Mathura and Gokul.",
+            "Vrindavan is renowned for its grand celebrations of Holi, where thousands gather to play with colors.",
+            "Pilgrims often undertake the 84 Koshi Parikrama, a circumambulation of the sacred area around Vrindavan, about 84 kilometers long.",
+            "There are over 5,000 temples in Vrindavan, each with its unique history and significance.",
+            "The Madan Mohan Temple is one of the oldest temples in Vrindavan, dedicated to Lord Krishna.",
+            "Vrindavan played a crucial role in the Bhakti movement, with many saints and poets contributing to its spiritual legacy."
+        ];
+
+        const factsList = document.getElementById('facts-list');
+        const newFactBtn = document.getElementById('new-fact-btn');
+
+        // Function to display a random fact
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factItem = document.createElement('li');
+            factItem.textContent = facts[randomIndex];
+            factsList.appendChild(factItem);
+        }
+
+        // Event listener for the button
+        newFactBtn.addEventListener('click', displayRandomFact);
+    </script>
+</body>
+</html>
